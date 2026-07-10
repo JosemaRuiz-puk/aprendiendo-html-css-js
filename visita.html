@@ -14,7 +14,7 @@
     <h1>Formulario de las visitas</h1>
     <p>Déjame un comentario. Valoro positivamente las visitas</p>
 
-    <form>
+    <form action="api/guardar_comentario.php" method="POST">
 
         <fieldset>
             <legend>Dame información sobre ti:</legend>
@@ -37,7 +37,7 @@
             </p>
             <p>
                 <label for="tipo">Tipo de visitante</label>
-                <select id="tipo" name="tipo" required>
+                <select id="tipo" name="tipo_visita" required>
                     <option value="" selected disabled> -- Elige una opcion -- </option>
                     <option value="amigo">Amigo</option>
                     <option value="profesor">Profesor</option>
