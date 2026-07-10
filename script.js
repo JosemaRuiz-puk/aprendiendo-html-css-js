@@ -3,8 +3,11 @@
 console.log("Bienvenido a la consola de mi web de aprendizaje!!");
 
 const boton = document.getElementById("saludar");
+
 const mensaje = document.getElementById("mensaje");
+
 let contador = 0;
+
 const contadorTexto = document.getElementById("contadorTexto");
 boton.addEventListener("click", function () {
     contador = contador + 1;
@@ -12,3 +15,146 @@ boton.addEventListener("click", function () {
     mensaje.hidden = false;
     contadorTexto.textContent = "Has pulsado el botón " + contador + " veces.";
 });
+
+const botonModo = document.getElementById("modoOscuro");
+
+if (localStorage.getItem("modoOscuro") === "activado") {
+    document.body.classList.add("oscuro");
+}
+
+botonModo.addEventListener("click", function () {
+    document.body.classList.toggle("oscuro");
+
+    if (document.body.classList.contains("oscuro")) {
+        localStorage.setItem("modoOscuro", "activado");
+    } else {
+        localStorage.setItem("modoOscuro", "desactivado");
+    }
+});
+
+const reloj = document.getElementById("reloj");
+const fecha = document.getElementById("fecha");
+
+function actualizarReloj() {
+    const ahora = new Date();
+
+    reloj.textContent = ahora.toLocaleTimeString("es-ES");
+
+    fecha.textContent = ahora.toLocaleDateString("es-ES", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    });
+}
+
+actualizarReloj();
+
+setInterval(actualizarReloj, 1000);
+
+const saludoTiempo = document.getElementById("saludoTiempo");
+const datosTiempo = document.getElementById("datosTiempo");
+
+async function obtenerTiempo() {
+    try {
+        const respuesta = await fetch(
+            "https://api.open-meteo.com/v1/forecast" +
+            "?latitude=38.99" +
+            "&longitude=-3.37" +
+            "&current=temperature_2m,weather_code,is_day" +
+            "&timezone=Europe%2FMadrid"
+        );
+
+        if (!respuesta.ok) {
+            throw new Error("No se ha podido consultar el tiempo");
+        }
+
+        const datos = await respuesta.json();
+
+        const temperatura = datos.current.temperature_2m;
+        const codigoTiempo = datos.current.weather_code;
+        const hora = new Date().getHours();
+
+        const momentoDia = obtenerMomentoDia(hora);
+        const estadoTiempo = obtenerEstadoTiempo(
+            codigoTiempo,
+            temperatura
+        );
+
+        saludoTiempo.textContent =
+            estadoTiempo + " " + momentoDia + " en Manzanares.";
+
+        datosTiempo.textContent =
+            "Ahora mismo hay " +
+            temperatura +
+            " °C y " +
+            obtenerDescripcionTiempo(codigoTiempo) +
+            ".";
+    } catch (error) {
+        saludoTiempo.textContent =
+            "No hemos podido consultar el tiempo.";
+
+        datosTiempo.textContent =
+            "Inténtalo de nuevo dentro de unos minutos.";
+
+        console.error(error);
+    }
+}
+
+function obtenerMomentoDia(hora) {
+    if (hora < 12) {
+        return "mañana";
+    } else if (hora < 21) {
+        return "tarde";
+    } else {
+        return "noche";
+    }
+}
+
+function obtenerEstadoTiempo(codigo, temperatura) {
+    if (codigo >= 95) {
+        return "Tormentosa";
+    } else if (
+        codigo === 51 ||
+        codigo === 53 ||
+        codigo === 55 ||
+        codigo === 61 ||
+        codigo === 63 ||
+        codigo === 65 ||
+        codigo === 80 ||
+        codigo === 81 ||
+        codigo === 82
+    ) {
+        return "Lluviosa";
+    } else if (temperatura >= 32) {
+        return "Calurosa";
+    } else if (temperatura <= 10) {
+        return "Fresca";
+    } else {
+        return "Agradable";
+    }
+}
+
+function obtenerDescripcionTiempo(codigo) {
+    if (codigo === 0) {
+        return "el cielo está despejado";
+    } else if (codigo === 1 || codigo === 2) {
+        return "hay algunas nubes";
+    } else if (codigo === 3) {
+        return "el cielo está cubierto";
+    } else if (codigo === 45 || codigo === 48) {
+        return "hay niebla";
+    } else if (codigo >= 51 && codigo <= 67) {
+        return "está lloviendo";
+    } else if (codigo >= 71 && codigo <= 77) {
+        return "está nevando";
+    } else if (codigo >= 80 && codigo <= 82) {
+        return "hay chubascos";
+    } else if (codigo >= 95) {
+        return "hay tormenta";
+    } else {
+        return "el tiempo es variable";
+    }
+}
+
+obtenerTiempo();

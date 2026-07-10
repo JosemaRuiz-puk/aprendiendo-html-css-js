@@ -37,7 +37,7 @@
             </p>
             <p>
                 <label for="tipo">Tipo de visitante</label>
-                <select id="tipo" name="tipo">
+                <select id="tipo" name="tipo" required>
                     <option value="" selected disabled> -- Elige una opcion -- </option>
                     <option value="amigo">Amigo</option>
                     <option value="profesor">Profesor</option>
@@ -46,7 +46,7 @@
                 </select>
             </p>
             <p><textarea name="comentario" id="comentario" rows="10" cols="50"
-                    placeholder="Escribe un comentario constructivo"></textarea></p>
+                    placeholder="Escribe un comentario constructivo" required></textarea></p>
             <p>¿Cómo has conocido mi web?</p>
 
             <input type="radio" id="github" name="origen" value="github">
