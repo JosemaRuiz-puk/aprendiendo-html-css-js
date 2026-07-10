@@ -21,4 +21,5 @@ $sentencia->execute([
     ":comentario" => $comentario
 ]);
 
-echo "Comentario guardado correctamente";
+header("Location: comentarios.php");
+exit;
