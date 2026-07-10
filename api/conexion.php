@@ -3,7 +3,7 @@
 $host = "localhost";
 $bd = "web_puk";
 $usuario = "web_puk";
-$password = "MiWeb2026!";
+$password = "MiWeb2026Segura!";
 
 try {
     $conexion = new PDO(
