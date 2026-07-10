@@ -6,6 +6,7 @@ $usuario = "web_puk";
 $password = "MiWeb2026Segura!";
 
 try {
+
     $conexion = new PDO(
         "mysql:host=$host;dbname=$bd;charset=utf8mb4",
         $usuario,
@@ -17,8 +18,8 @@ try {
         PDO::ERRMODE_EXCEPTION
     );
 
-    echo "Conexión correcta con MariaDB";
-
 } catch (PDOException $e) {
+
     die("Error de conexión: " . $e->getMessage());
+
 }
