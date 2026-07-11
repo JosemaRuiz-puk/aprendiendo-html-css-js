@@ -1,3 +1,19 @@
+<?php
+
+require_once __DIR__ . "/api/conexion.php";
+
+$sql = "SELECT cita, libro, personaje
+        FROM citas_pratchett
+        ORDER BY RAND()
+        LIMIT 1";
+
+$sentencia = $conexion->prepare($sql);
+$sentencia->execute();
+
+$citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -29,8 +45,8 @@
         </h3>
 
         <section class="tiempo-contenedor">
-        <p id="saludoTiempo">Consultando el tiempo...</p>
-        <p id="datosTiempo"></p>
+            <p id="saludoTiempo">Consultando el tiempo...</p>
+            <p id="datosTiempo"></p>
         </section>
 
         <nav>
@@ -61,29 +77,61 @@
             </a>.
         </p>
 
-    
-    <div class="reloj-contenedor">
-    <p>Ahora mismo son las:</p>
-    <p id="reloj">00:00:00</p>
-    <p id="fecha"></p>
-</div>
+        <section class="cita-pratchett">
+
+            <h2>Cita aleatoria de Terry Pratchett</h2>
+
+            <?php if ($citaPratchett): ?>
+
+                <blockquote>
+                    <?= nl2br(htmlspecialchars($citaPratchett["cita"])) ?>
+                </blockquote>
+
+                <p>
+                    <?php if (!empty($citaPratchett["personaje"])): ?>
+                        <strong>
+                            <?= htmlspecialchars($citaPratchett["personaje"]) ?>
+                        </strong>
+                        —
+                    <?php endif; ?>
+
+                    <em>
+                        <?= htmlspecialchars($citaPratchett["libro"]) ?>
+                    </em>
+                </p>
+
+                <p>Terry Pratchett</p>
+
+            <?php else: ?>
+
+                <p>No se ha podido cargar ninguna cita.</p>
+
+            <?php endif; ?>
+
+        </section>
+
+        <div class="reloj-contenedor">
+            <p>Ahora mismo son las:</p>
+            <p id="reloj">00:00:00</p>
+            <p id="fecha"></p>
+        </div>
 
     </main>
-    
+
     <button id="modoOscuro">🌙 Modo oscuro</button>
 
     <button id="saludar">¡Púlsame!</button>
     <p id="contadorTexto"></p>
     <p id="mensaje" hidden>
-    Qué obediente, has pulsado el botón. Gracias, bebé 😊
-</p>
+        Qué obediente, has pulsado el botón. Gracias, bebé 😊
+    </p>
 
     <footer>
         <p>Web creada por Josutpuk.</p>
         <p>Proyecto de aprendizaje HTML, CSS y JavaScript.</p>
     </footer>
 
-     <script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
