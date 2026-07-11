@@ -3,17 +3,59 @@
 console.log("Bienvenido a la consola de mi web de aprendizaje!!");
 
 const boton = document.getElementById("saludar");
-
 const mensaje = document.getElementById("mensaje");
-
-let contador = 0;
-
 const contadorTexto = document.getElementById("contadorTexto");
-boton.addEventListener("click", function () {
-    contador = contador + 1;
-    console.log("Has pulsado el botón " + contador + " veces.");
-    mensaje.hidden = false;
-    contadorTexto.textContent = "Has pulsado el botón " + contador + " veces.";
+
+boton.addEventListener("click", async function () {
+
+    boton.disabled = true;
+
+    try {
+
+        const respuesta = await fetch(
+            "api/incrementar_contador.php",
+            {
+                method: "POST"
+            }
+        );
+
+        if (!respuesta.ok) {
+            throw new Error("No se ha podido actualizar el contador");
+        }
+
+        const datos = await respuesta.json();
+
+        mensaje.hidden = false;
+
+        if (datos.valor === 1) {
+            contadorTexto.textContent =
+                "Este botón se ha pulsado 1 vez.";
+        } else {
+            contadorTexto.textContent =
+                "Este botón se ha pulsado " +
+                datos.valor +
+                " veces.";
+        }
+
+        console.log(
+            "El botón se ha pulsado " +
+            datos.valor +
+            " veces en total."
+        );
+
+    } catch (error) {
+
+        contadorTexto.textContent =
+            "No se ha podido actualizar el contador.";
+
+        console.error(error);
+
+    } finally {
+
+        boton.disabled = false;
+
+    }
+
 });
 
 const botonModo = document.getElementById("modoOscuro");
