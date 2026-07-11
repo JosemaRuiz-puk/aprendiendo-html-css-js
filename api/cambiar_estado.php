@@ -21,4 +21,4 @@ $sentencia->execute([
 ]);
 
 header("Location: admin_comentarios.php");
-exit;
+exit;       

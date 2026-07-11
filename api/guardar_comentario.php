@@ -1,7 +1,7 @@
 <?php
 
-require_once "conexion.php";
-require_once "correo.php";
+require_once __DIR__ . "/conexion.php";
+require_once __DIR__ . "/correo.php";
 
 $apodo = $_POST["apodo"];
 $email = $_POST["email"];
