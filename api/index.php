@@ -1,0 +1,138 @@
+<?php
+
+require_once __DIR__ . "/api/conexion.php";
+
+$sql = "SELECT cita, libro, personaje
+        FROM citas_pratchett
+        ORDER BY RAND()
+        LIMIT 1";
+
+$sentencia = $conexion->prepare($sql);
+$sentencia->execute();
+
+$citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
+
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web donde voy poniendo lo que voy aprendiendo" />
+    <meta name="author" content="Josutpuk" />
+    <title>Aprendiendo a hacer una web</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1 class="portada">Un clásico: ¡HOLA MUNDO!</h1>
+        <h2>Bienvenido a la web de aprendizaje de Josutpuk</h2>
+        <h3>Estamos trabajando en ello...</h3>
+
+        <p class="imagen-centro">
+            <img src="imagen.png" alt="Una imagen cualquiera hecha por IA" width="300" height="180">
+        </p>
+
+        <h3>
+            Este sitio será un cajón de sastre en el que iré actualizando
+            lo que voy aprendiendo en HTML, CSS y JavaScript.
+        </h3>
+
+        <section class="tiempo-contenedor">
+        <p id="saludoTiempo">Consultando el tiempo...</p>
+        <p id="datosTiempo"></p>
+        </section>
+
+        <nav>
+            <ul>
+                <li><a href="https://www.iesjuanbosco.es/" target="_blank">Mi alma mater</a></li>
+                <li><a href="cosmere.html">Libros del Cosmere que he leído</a></li>
+                <li><a href="sombrero.html">Lista candidatos a Sombrero de Paja</a></li>
+                <li><a href="hamburguesas.html">Lista de hamburguesas</a></li>
+                <li><a href="visita.html">Deja un comentario</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <h2 id="titulo">Sobre este proyecto</h2>
+
+        <p>
+            Esta web forma parte de mi aprendizaje de HTML, CSS y JavaScript.
+            Conforme vaya aprendiendo nuevas tecnologías, iré incorporándolas aquí.
+        </p>
+
+        <p>
+            Puedes ver el código fuente del proyecto en mi
+            <a href="https://github.com/JosemaRuiz-puk/aprendiendo-html-css-js" target="_blank">
+                repositorio de GitHub
+            </a>.
+        </p>
+
+        <section class="cita-pratchett">
+
+    <h2>Cita aleatoria de Terry Pratchett</h2>
+
+    <?php if ($citaPratchett): ?>
+
+        <blockquote>
+            <?= nl2br(htmlspecialchars($citaPratchett["cita"])) ?>
+        </blockquote>
+
+        <p>
+            <?php if (!empty($citaPratchett["personaje"])): ?>
+                <strong>
+                    <?= htmlspecialchars($citaPratchett["personaje"]) ?>
+                </strong>
+                —
+            <?php endif; ?>
+
+            <em>
+                <?= htmlspecialchars($citaPratchett["libro"]) ?>
+            </em>
+        </p>
+
+        <p>Terry Pratchett</p>
+
+    <?php else: ?>
+
+        <p>No se ha podido cargar ninguna cita.</p>
+
+    <?php endif; ?>
+
+</section>
+    
+    <div class="reloj-contenedor">
+    <p>Ahora mismo son las:</p>
+    <p id="reloj">00:00:00</p>
+    <p id="fecha"></p>
+</div>
+
+    </main>
+    
+    <button id="modoOscuro">🌙 Modo oscuro</button>
+
+    <button id="saludar">¡Púlsame!</button>
+    <p id="contadorTexto"></p>
+    <p id="mensaje" hidden>
+    Qué obediente, has pulsado el botón. Gracias, bebé 😊
+</p>
+
+    <footer>
+        <p>Web creada por Josutpuk.</p>
+        <p>Proyecto de aprendizaje HTML, CSS y JavaScript.</p>
+    </footer>
+
+     <script src="script.js"></script>
+
+</body>
+
+</html>
