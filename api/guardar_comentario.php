@@ -1,6 +1,7 @@
 <?php
 
 require_once "conexion.php";
+require_once "correo.php";
 
 $apodo = $_POST["apodo"];
 $email = $_POST["email"];
@@ -20,6 +21,24 @@ $sentencia->execute([
     ":tipo_visita" => $tipoVisita,
     ":comentario" => $comentario
 ]);
+
+$mensaje =
+"Nuevo comentario pendiente de moderación.
+
+Apodo: $apodo
+
+Email: $email
+
+Tipo de visitante: $tipoVisita
+
+Comentario:
+
+$comentario";
+
+enviarCorreo(
+    "Nuevo comentario en la web",
+    $mensaje
+);
 
 header("Location: comentarios.php");
 exit;
