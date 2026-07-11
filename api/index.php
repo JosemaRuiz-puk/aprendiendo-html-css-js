@@ -45,8 +45,8 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
         </h3>
 
         <section class="tiempo-contenedor">
-        <p id="saludoTiempo">Consultando el tiempo...</p>
-        <p id="datosTiempo"></p>
+            <p id="saludoTiempo">Consultando el tiempo...</p>
+            <p id="datosTiempo"></p>
         </section>
 
         <nav>
@@ -79,59 +79,59 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
 
         <section class="cita-pratchett">
 
-    <h2>Cita aleatoria de Terry Pratchett</h2>
+            <h2>Cita aleatoria de Terry Pratchett</h2>
 
-    <?php if ($citaPratchett): ?>
+            <?php if ($citaPratchett): ?>
 
-        <blockquote>
-            <?= nl2br(htmlspecialchars($citaPratchett["cita"])) ?>
-        </blockquote>
+                <blockquote>
+                    <?= nl2br(htmlspecialchars($citaPratchett["cita"])) ?>
+                </blockquote>
 
-        <p>
-            <?php if (!empty($citaPratchett["personaje"])): ?>
-                <strong>
-                    <?= htmlspecialchars($citaPratchett["personaje"]) ?>
-                </strong>
-                —
+                <p>
+                    <?php if (!empty($citaPratchett["personaje"])): ?>
+                        <strong>
+                            <?= htmlspecialchars($citaPratchett["personaje"]) ?>
+                        </strong>
+                        —
+                    <?php endif; ?>
+
+                    <em>
+                        <?= htmlspecialchars($citaPratchett["libro"]) ?>
+                    </em>
+                </p>
+
+                <p>Terry Pratchett</p>
+
+            <?php else: ?>
+
+                <p>No se ha podido cargar ninguna cita.</p>
+
             <?php endif; ?>
 
-            <em>
-                <?= htmlspecialchars($citaPratchett["libro"]) ?>
-            </em>
-        </p>
+        </section>
 
-        <p>Terry Pratchett</p>
-
-    <?php else: ?>
-
-        <p>No se ha podido cargar ninguna cita.</p>
-
-    <?php endif; ?>
-
-</section>
-    
-    <div class="reloj-contenedor">
-    <p>Ahora mismo son las:</p>
-    <p id="reloj">00:00:00</p>
-    <p id="fecha"></p>
-</div>
+        <div class="reloj-contenedor">
+            <p>Ahora mismo son las:</p>
+            <p id="reloj">00:00:00</p>
+            <p id="fecha"></p>
+        </div>
 
     </main>
-    
+
     <button id="modoOscuro">🌙 Modo oscuro</button>
 
     <button id="saludar">¡Púlsame!</button>
     <p id="contadorTexto"></p>
     <p id="mensaje" hidden>
-    Qué obediente, has pulsado el botón. Gracias, bebé 😊
-</p>
+        Qué obediente, has pulsado el botón. Gracias, bebé 😊
+    </p>
 
     <footer>
         <p>Web creada por Josutpuk.</p>
         <p>Proyecto de aprendizaje HTML, CSS y JavaScript.</p>
     </footer>
 
-     <script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
