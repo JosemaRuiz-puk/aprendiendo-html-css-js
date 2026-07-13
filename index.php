@@ -20,8 +20,14 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Web donde voy poniendo lo que voy aprendiendo" />
-    <meta name="author" content="Josutpuk" />
+
+    <meta
+        name="description"
+        content="Web personal de Josutpuk para aprender HTML, CSS, JavaScript, PHP y bases de datos"
+    >
+
+    <meta name="author" content="Josutpuk">
+
     <title>Aprendiendo a hacer una web</title>
 
     <link rel="stylesheet" href="styles.css">
@@ -32,16 +38,22 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
     <header>
 
         <h1 class="portada">Un clásico: ¡HOLA MUNDO!</h1>
+
         <h2>Bienvenido a la web de aprendizaje de Josutpuk</h2>
+
         <h3>Estamos trabajando en ello...</h3>
 
         <p class="imagen-centro">
-            <img src="imagen.png" alt="Una imagen cualquiera hecha por IA" width="300" height="180">
+            <img
+                src="imagen.png"
+                alt="Una imagen cualquiera hecha por inteligencia artificial"
+                width="300"
+                height="180"
+            >
         </p>
 
         <h3>
-            Este sitio será un cajón de sastre en el que iré actualizando
-            lo que voy aprendiendo en HTML, CSS y JavaScript.
+            Un rincón personal para aprender, experimentar y compartir.
         </h3>
 
         <section class="tiempo-contenedor">
@@ -51,11 +63,41 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
 
         <nav>
             <ul>
-                <li><a href="https://www.iesjuanbosco.es/" target="_blank">Mi alma mater</a></li>
-                <li><a href="cosmere.html">Libros del Cosmere que he leído</a></li>
-                <li><a href="sombrero.html">Lista candidatos a Sombrero de Paja</a></li>
-                <li><a href="hamburguesas.html">Lista de hamburguesas</a></li>
-                <li><a href="visita.html">Deja un comentario</a></li>
+                <li>
+                    <a href="https://www.iesjuanbosco.es/" target="_blank">
+                        Mi alma mater
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cosmere.html">
+                        Libros del Cosmere que he leído
+                    </a>
+                </li>
+
+                <li>
+                    <a href="sombrero.html">
+                        Lista candidatos a Sombrero de Paja
+                    </a>
+                </li>
+
+                <li>
+                    <a href="hamburguesas.html">
+                        Lista de hamburguesas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="objetivos.html">
+                        Objetivos alcanzados
+                    </a>
+                </li>
+
+                <li>
+                    <a href="visita.html">
+                        Deja un comentario
+                    </a>
+                </li>
             </ul>
         </nav>
 
@@ -63,19 +105,60 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
 
     <main>
 
-        <h2 id="titulo">Sobre este proyecto</h2>
+        <section>
 
-        <p>
-            Esta web forma parte de mi aprendizaje de HTML, CSS y JavaScript.
-            Conforme vaya aprendiendo nuevas tecnologías, iré incorporándolas aquí.
-        </p>
+            <h2 id="titulo">Sobre este proyecto</h2>
 
-        <p>
-            Puedes ver el código fuente del proyecto en mi
-            <a href="https://github.com/JosemaRuiz-puk/aprendiendo-html-css-js" target="_blank">
-                repositorio de GitHub
-            </a>.
-        </p>
+            <p>
+                Esta web nació con una idea muy sencilla: aprender haciendo.
+                En lugar de limitarme a realizar ejercicios que acaban olvidados
+                en una carpeta del ordenador, decidí crear una página web real
+                e ir ampliándola poco a poco.
+            </p>
+
+            <p>
+                Cada vez que aprendo algo nuevo intento encontrar la forma de
+                aplicarlo aquí, aunque sea mediante una pequeña mejora o una
+                nueva funcionalidad.
+            </p>
+
+            <p>
+                También considero esta web una especie de
+                <strong>cajón de sastre</strong>. Aquí tienen cabida muchas de
+                las cosas que me gustan o me llaman la atención: libros,
+                videojuegos, curiosidades, proyectos personales o cualquier
+                idea que me apetezca compartir.
+            </p>
+
+            <p>
+                No pretende centrarse en un único tema, sino ser un espacio
+                personal que pueda crecer en cualquier dirección conforme yo
+                también vaya aprendiendo.
+            </p>
+
+            <p>
+                La web está en constante evolución y probablemente nunca pueda
+                decir que está completamente terminada. Siempre habrá algo
+                nuevo que añadir, mejorar o aprender.
+            </p>
+
+            <p>
+                Puedes consultar un resumen de los objetivos que he ido
+                consiguiendo durante la creación de esta web
+                <a href="objetivos.html">aquí</a>.
+            </p>
+
+            <p>
+                También puedes ver el código fuente del proyecto en mi
+                <a
+                    href="https://github.com/JosemaRuiz-puk/aprendiendo-html-css-js"
+                    target="_blank"
+                >
+                    repositorio de GitHub
+                </a>.
+            </p>
+
+        </section>
 
         <section class="cita-pratchett">
 
@@ -88,16 +171,24 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
                 </blockquote>
 
                 <p>
-                    <?php if (!empty($citaPratchett["personaje"])): ?>
+
+                    <?php if (
+                        !empty($citaPratchett["personaje"]) &&
+                        $citaPratchett["personaje"] !== "Narrador"
+                    ): ?>
+
                         <strong>
                             <?= htmlspecialchars($citaPratchett["personaje"]) ?>
                         </strong>
+
                         —
+
                     <?php endif; ?>
 
                     <em>
                         <?= htmlspecialchars($citaPratchett["libro"]) ?>
                     </em>
+
                 </p>
 
                 <p>Terry Pratchett</p>
@@ -121,14 +212,18 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
     <button id="modoOscuro">🌙 Modo oscuro</button>
 
     <button id="saludar">¡Púlsame!</button>
+
     <p id="contadorTexto"></p>
+
     <p id="mensaje" hidden>
         Qué obediente, has pulsado el botón. Gracias, bebé 😊
     </p>
 
     <footer>
         <p>Web creada por Josutpuk.</p>
-        <p>Proyecto de aprendizaje HTML, CSS y JavaScript.</p>
+        <p>
+            Proyecto de aprendizaje de HTML, CSS, JavaScript, PHP y bases de datos.
+        </p>
     </footer>
 
     <script src="script.js"></script>
