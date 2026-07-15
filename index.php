@@ -94,7 +94,7 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
                 </li>
 
                 <li>
-                    <a href="visita.html">
+                    <a href="visita.php">
                         Deja un comentario
                     </a>
                 </li>
