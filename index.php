@@ -98,14 +98,53 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
                         Deja un comentario
                     </a>
                 </li>
+
+                <li>
+                    <a href="gestor_biblioteca.html">
+                        Próximo proyecto
+                    </a>
+                </li>
             </ul>
         </nav>
 
     </header>
 
-    <main>
+    
 
-        <section>
+   <main>
+
+    <section>
+
+        <h2>Próximo proyecto</h2>
+
+        <p>
+            Mi siguiente reto será desarrollar una aplicación de escritorio para
+            gestionar mi biblioteca personal utilizando Java.
+        </p>
+
+        <p>
+            La idea es comenzar con una versión sencilla que permita registrar los
+            libros que tengo y buscarlos fácilmente. Poco a poco irá creciendo con
+            nuevas funcionalidades, una interfaz gráfica y una base de datos.
+        </p>
+
+        <p>
+            Este proyecto también formará parte de mi proceso de aprendizaje, igual
+            que esta web.
+        </p>
+
+        <p>
+            <a href="gestor_biblioteca.html">
+                Conoce más sobre este proyecto
+            </a>
+        </p>
+
+    </section>
+
+    <section>
+
+     
+        
 
             <h2 id="titulo">Sobre este proyecto</h2>
 
@@ -213,11 +252,12 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
 
     <button id="saludar">¡Púlsame!</button>
 
-    <p id="contadorTexto"></p>
 
     <p id="mensaje" hidden>
         Qué obediente, has pulsado el botón. Gracias, bebé 😊
     </p>
+    
+    <p id="contadorTexto"></p>
 
     <footer>
         <p>Web creada por Josutpuk.</p>
