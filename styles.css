@@ -257,3 +257,64 @@ body.oscuro #reloj {
 body.oscuro .tiempo-contenedor {
     background-color: #3a3a3a;
 }
+
+/* =========================
+   PUKBOX
+   ========================= */
+
+header {
+    position: relative;
+}
+
+.acceso-pukbox {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px 14px;
+
+    color: inherit;
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 2px solid #527a35;
+    border-radius: 14px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.acceso-pukbox img {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.acceso-pukbox:hover {
+    transform: translateY(-2px);
+    background-color: white;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
+}
+
+.acceso-pukbox:focus-visible {
+    outline: 3px solid #6f42c1;
+    outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+    .acceso-pukbox {
+        position: static;
+        width: fit-content;
+        margin: 15px auto 25px;
+    }
+}
