@@ -37,20 +37,14 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
 
     <header>
 
-    <a
-        class="acceso-pukbox"
-        href="https://pukbox.duckdns.org"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        <img
-            src="imagenes/logo-pukbox.png"
-            alt=""
-            aria-hidden="true"
-        >
-
-        <span>Entrar a PukBox</span>
-    </a>
+<a
+    class="acceso-pukbox"
+    href="https://pukbox.duckdns.org"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    ☁️ Acceso a PukBox
+</a>
 
         <h2>Bienvenido a la web de aprendizaje de Josutpuk</h2>
 
