@@ -43,7 +43,7 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
     target="_blank"
     rel="noopener noreferrer"
 >
-    ☁️ Acceso a PukBox
+    ☁️ Entrar a PukBox
 </a>
 
         <h2>Bienvenido a la web de aprendizaje de Josutpuk</h2>
