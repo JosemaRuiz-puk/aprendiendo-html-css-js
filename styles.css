@@ -264,12 +264,13 @@ body.oscuro .tiempo-contenedor {
 
 header {
     position: relative;
+    padding-top: 55px;
 }
 
 .acceso-pukbox {
     position: absolute;
-    top: 18px;
-    right: 18px;
+    top: 0;
+    right: 0;
 
     padding: 8px 12px;
 
@@ -285,7 +286,7 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 
     transition:
-        background-color 0.5s ease,
+        background-color 0.3s ease,
         transform 0.2s ease,
         box-shadow 0.2s ease;
 }
@@ -294,10 +295,7 @@ header {
     background-color: #3498db;
     color: white;
     text-decoration: none;
-
     transform: translateY(-2px);
-
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
 }
 
 .acceso-pukbox:focus-visible {
