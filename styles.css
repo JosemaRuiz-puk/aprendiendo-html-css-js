@@ -183,25 +183,62 @@ footer {
    MODO OSCURO
    ========================= */
 
-// Aplicar el modo oscuro guardado
-if (localStorage.getItem("modoOscuro") === "activado") {
-    document.body.classList.add("oscuro");
+/* =========================
+   MODO OSCURO
+   ========================= */
+
+body.oscuro {
+    background-color: #1b1b1b;
+    color: #f2f2f2;
 }
 
-// Buscar el botón, si existe en la página
-const botonModo = document.getElementById("modoOscuro");
-
-if (botonModo) {
-    botonModo.addEventListener("click", function () {
-        document.body.classList.toggle("oscuro");
-
-        if (document.body.classList.contains("oscuro")) {
-            localStorage.setItem("modoOscuro", "activado");
-        } else {
-            localStorage.setItem("modoOscuro", "desactivado");
-        }
-    });
+body.oscuro main {
+    background-color: #2b2b2b;
 }
+
+body.oscuro form {
+    background-color: #2b2b2b;
+}
+
+body.oscuro h1,
+body.oscuro h2,
+body.oscuro h3,
+body.oscuro legend {
+    color: #f2f2f2;
+}
+
+body.oscuro footer {
+    color: #cccccc;
+}
+
+body.oscuro a {
+    color: #7ec8ff;
+}
+
+body.oscuro input,
+body.oscuro select,
+body.oscuro textarea {
+    background-color: #3a3a3a;
+    color: white;
+    border-color: #777777;
+}
+
+body.oscuro fieldset {
+    border-color: #777777;
+}
+
+body.oscuro table {
+    color: white;
+}
+
+body.oscuro td {
+    border-color: #666666;
+}
+
+body.oscuro tr:hover {
+    background-color: #3a4b55;
+}
+
 /* =========================
    RELOJ
    ========================= */
