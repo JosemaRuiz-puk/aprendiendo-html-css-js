@@ -99,7 +99,7 @@ $comentarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     </p>
 
     <p>
-        <a href="../index.html">Volver a la página principal</a>
+        <a href="../index.php">Volver a la página principal</a>
     </p>
 
 </body>

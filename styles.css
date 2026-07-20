@@ -183,29 +183,25 @@ footer {
    MODO OSCURO
    ========================= */
 
-body.oscuro {
-    background-color: #1b1b1b;
-    color: white;
+// Aplicar el modo oscuro guardado
+if (localStorage.getItem("modoOscuro") === "activado") {
+    document.body.classList.add("oscuro");
 }
 
-body.oscuro main {
-    background-color: #2b2b2b;
-}
+// Buscar el botón, si existe en la página
+const botonModo = document.getElementById("modoOscuro");
 
-body.oscuro h1,
-body.oscuro h2,
-body.oscuro h3 {
-    color: white;
-}
+if (botonModo) {
+    botonModo.addEventListener("click", function () {
+        document.body.classList.toggle("oscuro");
 
-body.oscuro footer {
-    color: #cccccc;
+        if (document.body.classList.contains("oscuro")) {
+            localStorage.setItem("modoOscuro", "activado");
+        } else {
+            localStorage.setItem("modoOscuro", "desactivado");
+        }
+    });
 }
-
-body.oscuro a {
-    color: #7ec8ff;
-}
-
 /* =========================
    RELOJ
    ========================= */

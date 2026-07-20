@@ -206,6 +206,8 @@ $comentarios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         <a href="index.php">Volver a la página principal</a>
     </p>
 
+    <script src="script.js"></script>
+
 </body>
 
 </html>
