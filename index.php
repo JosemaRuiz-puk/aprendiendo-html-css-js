@@ -273,6 +273,7 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
         </p>
     </footer>
 
+    <script src="modo-oscuro.js"></script>
     <script src="script.js"></script>
 
 </body>

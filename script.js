@@ -58,25 +58,6 @@ boton.addEventListener("click", async function () {
 
 });
 
-// Aplicar el modo oscuro guardado
-if (localStorage.getItem("modoOscuro") === "activado") {
-    document.body.classList.add("oscuro");
-}
-
-// Si existe el botón, permitir cambiar el modo
-const botonModo = document.getElementById("modoOscuro");
-
-if (botonModo) {
-    botonModo.addEventListener("click", function () {
-        document.body.classList.toggle("oscuro");
-
-        if (document.body.classList.contains("oscuro")) {
-            localStorage.setItem("modoOscuro", "activado");
-        } else {
-            localStorage.setItem("modoOscuro", "desactivado");
-        }
-    });
-}
 
 const reloj = document.getElementById("reloj");
 const fecha = document.getElementById("fecha");
