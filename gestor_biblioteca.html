@@ -1,79 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Gestor de biblioteca</title>
+    <title>BibliotecaDePuk</title>
 
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <header>
+    <main class="contenido-proyecto">
 
-        <h1>📚 Gestor de biblioteca</h1>
+        <section class="proyecto">
 
-        <h2>🚧 Página en construcción 🚧</h2>
-
-    </header>
-
-    <main>
-
-        <section>
-
-            <h2>¡Has llegado demasiado pronto!</h2>
+            <h1>BibliotecaDePuk</h1>
 
             <p>
-                Todavía no hay libros que catalogar por aquí.
+                La historia de cómo nació <strong>BibliotecaDePuk</strong> es sencilla:
+                venía un verano muy largo por delante y quería empezar a demostrarme
+                de qué era capaz tras haber tenido un año duro como estudiante de DAM.
             </p>
 
             <p>
-                Este será mi próximo gran proyecto de programación: una aplicación
-                de escritorio en Java para gestionar mi biblioteca personal.
+                Así que, tras una breve tormenta de ideas con la IA, determinamos que,
+                con los conocimientos que había adquirido durante el curso, sería capaz
+                de crear una aplicación para llevar un registro de todos los libros
+                que hay por casa. Así que me puse manos a la obra.
             </p>
 
             <p>
-                De momento solo hay estanterías vacías, café y muchas ganas de
-                programar.
+                La aplicación ha sido desarrollada en <strong>Java</strong>, con una
+                interfaz gráfica creada con <strong>Swing</strong>. Con ella puedo guardar
+                distintos datos de los libros que tengo y de los que vaya adquiriendo,
+                como ISBN, título, autor o año de publicación.
             </p>
-
-            <h3>📦 Estado del proyecto</h3>
-
-            <pre>
-
-    ╔══════════════════════╗
-    ║  EN CONSTRUCCIÓN...  ║
-    ╚══════════════════════╝
-
-            </pre>
 
             <p>
-                Vuelve dentro de un tiempo. Prometo que aquí empezarán a aparecer
-                libros antes de que la Biblioteca Invisible de Terry Pratchett me
-                reclame.
+                De este modo, he podido comprobar que
+                <strong>hay más de 400 libros en casa</strong>.
             </p>
+
+            <p>
+                También he implementado la opción de eliminar registros, para contemplar
+                posibles bajas o pérdidas.
+            </p>
+
+            <p>
+                Además, tanto el alta como la eliminación de libros pueden hacerse desde
+                la propia aplicación o mediante la manipulación del archivo
+                <strong>TXT</strong> en el que se almacenan los datos.
+            </p>
+
+            <p>
+                La aplicación se encarga de mantener la información actualizada y de
+                generar un <strong>ID único para cada entrada</strong>.
+            </p>
+
+            <h2>Una pequeña demostración</h2>
+
+            <p>
+                En este vídeo muestro parte del funcionamiento de BibliotecaDePuk:
+                desde la carga inicial de la biblioteca hasta la introducción y eliminación
+                de libros, comprobando cómo todos los cambios quedan reflejados en el
+                archivo de datos.
+            </p>
+
+            <div class="video-proyecto">
+                <video controls>
+                    <source src="DemoBiblioteca.mp4" type="video/mp4">
+                    Tu navegador no puede reproducir este vídeo.
+                </video>
+            </div>
+
+            <h2>Esto no para aquí...</h2>
+
+            <p>
+                Aún hay cosillas que mejorar. En próximas versiones quiero implementar
+                una <strong>ficha con más detalles sobre cada libro</strong>, conectar la
+                aplicación a una <strong>base de datos</strong> en lugar de utilizar un
+                archivo TXT —tengo que aprender a hacerlo durante el próximo curso— y
+                añadir otras funcionalidades que he ido echando en falta mientras
+                introducía los datos de mi biblioteca.
+            </p>
+
+            <div class="enlaces-proyecto">
+
+                <a href="https://github.com/JosemaRuiz-puk/BibliotecaDePuk"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Ver código en GitHub
+                </a>
+
+                <a href="index.php">
+                    Volver a inicio
+                </a>
+
+            </div>
 
         </section>
 
-        <p>
-            <a href="index.php">← Volver a la página principal</a>
-        </p>
-
     </main>
 
-    <footer>
-
-        <p>
-            Aquí pronto comenzará una nueva aventura.
-        </p>
-
-    </footer>
-
-<script src="modo-oscuro.js"></script>
-
 </body>
-
 </html>

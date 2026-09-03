@@ -108,7 +108,7 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
 
                 <li>
                     <a href="gestor_biblioteca.html">
-                        Próximo proyecto
+                        Proyecto número 2
                     </a>
                 </li>
             </ul>
