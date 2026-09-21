@@ -22,8 +22,6 @@ main {
 }
 
 
-
-
 /* =========================
    TÍTULOS
    ========================= */
@@ -88,7 +86,96 @@ nav a {
 
 nav a:hover {
     background-color: #3498db;
+    color: white;
     text-decoration: none;
+}
+
+
+/* =========================
+   MIS PROYECTOS
+   ========================= */
+
+.proyectos {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.proyectos > p {
+    max-width: 650px;
+    margin: 0 auto 25px auto;
+    line-height: 1.6;
+}
+
+.botones-proyectos {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.boton-proyecto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 220px;
+    padding: 18px 25px;
+
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    border-radius: 14px;
+
+    text-decoration: none;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.3s ease;
+}
+
+
+/* BibliotecaDePuk */
+
+.boton-proyecto.biblioteca {
+    background-color: #218c53;
+}
+
+.boton-proyecto.biblioteca:hover {
+    background-color: #176d40;
+}
+
+
+/* Pulso Manchego */
+
+.boton-proyecto.pulso {
+    background-color: #1f6fc6;
+}
+
+.boton-proyecto.pulso:hover {
+    background-color: #18579b;
+}
+
+
+/* Efecto común */
+
+.boton-proyecto:hover {
+    color: white;
+    text-decoration: none;
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.22);
+}
+
+.boton-proyecto:focus-visible {
+    outline: 3px solid #f1c40f;
+    outline-offset: 3px;
 }
 
 
@@ -179,9 +266,6 @@ footer {
     font-size: 0.9em;
 }
 
-/* =========================
-   MODO OSCURO
-   ========================= */
 
 /* =========================
    MODO OSCURO
@@ -239,6 +323,30 @@ body.oscuro tr:hover {
     background-color: #3a4b55;
 }
 
+
+/* Botones de proyectos en modo oscuro */
+
+body.oscuro .boton-proyecto {
+    color: white;
+}
+
+body.oscuro .boton-proyecto.biblioteca {
+    background-color: #267f51;
+}
+
+body.oscuro .boton-proyecto.biblioteca:hover {
+    background-color: #32a368;
+}
+
+body.oscuro .boton-proyecto.pulso {
+    background-color: #2468a9;
+}
+
+body.oscuro .boton-proyecto.pulso:hover {
+    background-color: #3184d5;
+}
+
+
 /* =========================
    RELOJ
    ========================= */
@@ -263,6 +371,7 @@ body.oscuro tr:hover {
 body.oscuro #reloj {
     color: #5ee38d;
 }
+
 
 /* =========================
    TIEMPO EN MANZANARES
@@ -290,6 +399,7 @@ body.oscuro #reloj {
 body.oscuro .tiempo-contenedor {
     background-color: #3a3a3a;
 }
+
 
 /* =========================
    PUKBOX
@@ -335,11 +445,13 @@ header {
     outline: 3px solid #3498db;
     outline-offset: 3px;
 }
+
+
 /* =========================
-   VIDEO BIBLIOTECA
+   VIDEO / PÁGINAS DE PROYECTO
    ========================= */
 
-   .contenido-proyecto {
+.contenido-proyecto {
     max-width: 1000px;
     margin: 0 auto;
     padding: 30px 20px;
@@ -385,4 +497,96 @@ header {
     text-decoration: none;
     border: 1px solid currentColor;
     border-radius: 6px;
+}
+
+
+/* =========================
+   ADAPTACIÓN A MÓVILES
+   ========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+    }
+
+    main {
+        padding: 18px;
+        border-radius: 30px;
+    }
+
+    nav li {
+        display: block;
+        margin: 22px 0;
+    }
+
+    .botones-proyectos {
+        flex-direction: column;
+    }
+
+    .boton-proyecto {
+        min-width: 0;
+        width: auto;
+    }
+
+    .acceso-pukbox {
+        position: static;
+        display: block;
+        width: fit-content;
+        margin: 0 auto 20px auto;
+    }
+
+    header {
+        padding-top: 10px;
+    }
+
+}
+
+/* =========================
+   PULSO MANCHEGO
+   ========================= */
+
+.boton-abrir-pulso {
+    background-color: #1f6fc6;
+    color: white !important;
+    font-weight: bold;
+    padding: 14px 22px !important;
+    border: none !important;
+    border-radius: 10px !important;
+}
+
+.boton-abrir-pulso:hover {
+    background-color: #18579b;
+    color: white;
+    text-decoration: none;
+}
+
+.boton-volver {
+    background-color: #ecf0f1;
+    color: #2c3e50 !important;
+}
+
+.boton-volver:hover {
+    background-color: #d5dbdb;
+    text-decoration: none;
+}
+
+/* Modo oscuro */
+
+body.oscuro .boton-abrir-pulso {
+    background-color: #2468a9;
+    color: white !important;
+}
+
+body.oscuro .boton-abrir-pulso:hover {
+    background-color: #3184d5;
+}
+
+body.oscuro .boton-volver {
+    background-color: #3a3a3a;
+    color: #f2f2f2 !important;
+}
+
+body.oscuro .boton-volver:hover {
+    background-color: #4b4b4b;
 }

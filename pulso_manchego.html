@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Pulso Manchego, aplicación de noticias desarrollada con Flutter y Dart"
+    >
+
+    <meta name="author" content="Josutpuk">
+
+    <title>Pulso Manchego</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="contenido-proyecto proyecto">
+
+        <h1>📰 Pulso Manchego</h1>
+
+        <section>
+
+            <h2>¿Qué es esto?</h2>
+
+            <p>
+                Pulso Manchego es una pequeña aplicación de noticias que hice
+                mientras estudiaba Desarrollo de Interfaces en DAM.
+            </p>
+
+            <p>
+                La idea era bastante sencilla: tener un sitio donde consultar
+                noticias de Castilla-La Mancha, ver también noticias del resto
+                de España y poder buscar cualquier tema que me interesase.
+            </p>
+
+            <p>
+                Está hecha con <strong>Flutter y Dart</strong> y utiliza
+                NewsAPI para obtener las noticias.
+            </p>
+
+        </section>
+
+
+        <section>
+
+            <h2>¿De dónde salió?</h2>
+
+            <p>
+                Pulso Manchego nació como una práctica del módulo de
+                <strong>Desarrollo de Interfaces</strong> del ciclo de
+                Desarrollo de Aplicaciones Multiplataforma.
+            </p>
+
+            <p>
+                En aquel momento estábamos trabajando con Flutter y una de
+                las cosas interesantes era comprobar cómo un mismo proyecto
+                podía funcionar como aplicación y también desde un navegador.
+            </p>
+
+            <p>
+                Y de ahí salió Pulso Manchego.
+            </p>
+
+        </section>
+
+
+        <section>
+
+            <h2>Y sí, aquí hubo mucha IA</h2>
+
+            <p>
+                Esta práctica tiene una particularidad: el código original
+                fue generado íntegramente con ayuda de inteligencia artificial.
+            </p>
+
+            <p>
+                Yo fui decidiendo qué quería que hiciera la aplicación,
+                qué apartados debía tener, qué había que cambiar y cómo quería
+                que funcionase. Después tocaba probar, detectar fallos y seguir
+                haciendo cambios hasta conseguir que todo funcionase.
+            </p>
+
+            <p>
+                Así que también fue una forma de experimentar con el uso de la
+                inteligencia artificial durante el desarrollo de una aplicación.
+            </p>
+
+        </section>
+
+
+        <section>
+
+            <h2>¿Qué hace?</h2>
+
+            <ul>
+
+                <li>
+                    Muestra noticias relacionadas con Castilla-La Mancha.
+                </li>
+
+                <li>
+                    Muestra noticias del resto de España.
+                </li>
+
+                <li>
+                    Permite buscar noticias sobre cualquier tema.
+                </li>
+
+                <li>
+                    Muestra el titular, la imagen, la fuente y la fecha
+                    de publicación.
+                </li>
+
+                <li>
+                    Puede ejecutarse como aplicación Flutter y también
+                    directamente desde la web.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <section>
+
+            <h2>Y casi acaba en el cementerio de proyectos...</h2>
+
+            <p>
+                Tiempo después borré por error la carpeta donde tenía guardado
+                el proyecto y durante un rato pensé que Pulso Manchego había
+                desaparecido para siempre.
+            </p>
+
+            <p>
+                Por suerte, Visual Studio Code conservaba versiones de los
+                archivos en su historial local. A partir de ahí pude recuperar
+                el código, reconstruir de nuevo el proyecto Flutter y comprobar
+                que la aplicación seguía funcionando.
+            </p>
+
+            <p>
+                Ya puestos, decidí darle una segunda vida y traerla hasta esta
+                web para que no se quedase simplemente olvidada en una carpeta
+                del ordenador.
+            </p>
+
+        </section>
+
+
+        <section>
+
+            <h2>Una pequeña mejora por el camino</h2>
+
+            <p>
+                La versión original llevaba la clave de acceso a NewsAPI dentro
+                del propio código de la aplicación.
+            </p>
+
+            <p>
+                Eso no era una buena idea al publicarla en Internet, porque esa
+                clave podría quedar accesible desde el navegador.
+            </p>
+
+            <p>
+                Ahora Pulso Manchego hace las consultas a través de un pequeño
+                servicio PHP alojado en mi propio servidor. La aplicación pide
+                las noticias al servidor y es el servidor quien se comunica con
+                NewsAPI, manteniendo la clave fuera de la aplicación pública.
+            </p>
+
+        </section>
+
+
+        <section>
+
+            <h2>¿Con qué está hecho?</h2>
+
+            <ul>
+                <li>Flutter</li>
+                <li>Dart</li>
+                <li>NewsAPI</li>
+                <li>PHP</li>
+                <li>HTML y CSS</li>
+            </ul>
+
+        </section>
+
+
+        <div class="enlaces-proyecto">
+
+            <a
+                href="/pulso-manchego/"
+                class="boton-abrir-pulso"
+            >
+                📰 Abrir Pulso Manchego
+            </a>
+
+            <a
+                href="index.php"
+                class="boton-volver"
+            >
+                ← Volver a la página principal
+            </a>
+
+        </div>
+
+    </main>
+
+
+
+
+
+    <footer>
+
+        <p>
+            Web creada por Josutpuk.
+        </p>
+
+        <p>
+            Proyecto de aprendizaje de HTML, CSS, JavaScript,
+            PHP y bases de datos.
+        </p>
+
+    </footer>
+
+
+    <script src="modo-oscuro.js"></script>
+
+</body>
+
+</html>

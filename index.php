@@ -19,7 +19,11 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
@@ -37,26 +41,32 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
 
     <header>
 
-<a
-    class="acceso-pukbox"
-    href="https://pukbox.duckdns.org"
-    target="_blank"
-    rel="noopener noreferrer"
->
-    ☁️ Entrar a PukBox
-</a>
+        <a
+            class="acceso-pukbox"
+            href="https://pukbox.duckdns.org"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            ☁️ Entrar a PukBox
+        </a>
 
-        <h2>Bienvenido a la web de aprendizaje de Josutpuk</h2>
+        <h2>
+            Bienvenido a la web de aprendizaje de Josutpuk
+        </h2>
 
-        <h3>Estamos trabajando en ello...</h3>
+        <h3>
+            Estamos trabajando en ello...
+        </h3>
 
         <p class="imagen-centro">
+
             <img
                 src="imagen.png"
                 alt="Una imagen cualquiera hecha por inteligencia artificial"
                 width="300"
                 height="180"
             >
+
         </p>
 
         <h3>
@@ -64,14 +74,24 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
         </h3>
 
         <section class="tiempo-contenedor">
-            <p id="saludoTiempo">Consultando el tiempo...</p>
+
+            <p id="saludoTiempo">
+                Consultando el tiempo...
+            </p>
+
             <p id="datosTiempo"></p>
+
         </section>
 
         <nav>
+
             <ul>
+
                 <li>
-                    <a href="https://www.iesjuanbosco.es/" target="_blank">
+                    <a
+                        href="https://www.iesjuanbosco.es/"
+                        target="_blank"
+                    >
                         Mi alma mater
                     </a>
                 </li>
@@ -106,99 +126,102 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
                     </a>
                 </li>
 
-                <li>
-                    <a href="gestor_biblioteca.html">
-                        Proyecto número 2
-                    </a>
-                </li>
             </ul>
+
         </nav>
 
     </header>
 
-    
 
-   <main>
+    <main>
 
-    <section>
+        <section class="proyectos">
 
-        <h2>Próximo proyecto</h2>
-
-        <p>
-            Mi siguiente reto será desarrollar una aplicación de escritorio para
-            gestionar mi biblioteca personal utilizando Java.
-        </p>
-
-        <p>
-            La idea es comenzar con una versión sencilla que permita registrar los
-            libros que tengo y buscarlos fácilmente. Poco a poco irá creciendo con
-            nuevas funcionalidades, una interfaz gráfica y una base de datos.
-        </p>
-
-        <p>
-            Este proyecto también formará parte de mi proceso de aprendizaje, igual
-            que esta web.
-        </p>
-
-        <p>
-            <a href="gestor_biblioteca.html">
-                Conoce más sobre este proyecto
-            </a>
-        </p>
-
-    </section>
-
-    <section>
-
-     
-        
-
-            <h2 id="titulo">Sobre este proyecto</h2>
+            <h2>Mis proyectos</h2>
 
             <p>
-                Esta web nació con una idea muy sencilla: aprender haciendo.
-                En lugar de limitarme a realizar ejercicios que acaban olvidados
-                en una carpeta del ordenador, decidí crear una página web real
-                e ir ampliándola poco a poco.
+                Algunos de los proyectos que he ido desarrollando
+                durante mi aprendizaje en Desarrollo de Aplicaciones
+                Multiplataforma.
+            </p>
+
+            <div class="botones-proyectos">
+
+                <a
+                    href="gestor_biblioteca.html"
+                    class="boton-proyecto biblioteca"
+                >
+                    📚 BibliotecaDePuk
+                </a>
+
+                <a
+                    href="pulso_manchego.html"
+                    class="boton-proyecto pulso"
+                >
+                    📰 Pulso Manchego
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section>
+
+            <h2 id="titulo">
+                Sobre este proyecto
+            </h2>
+
+            <p>
+                Esta web nació con una idea muy sencilla:
+                aprender haciendo.
+                En lugar de limitarme a realizar ejercicios
+                que acaban olvidados en una carpeta del ordenador,
+                decidí crear una página web real e ir ampliándola
+                poco a poco.
             </p>
 
             <p>
-                Cada vez que aprendo algo nuevo intento encontrar la forma de
-                aplicarlo aquí, aunque sea mediante una pequeña mejora o una
-                nueva funcionalidad.
+                Cada vez que aprendo algo nuevo intento encontrar
+                la forma de aplicarlo aquí, aunque sea mediante
+                una pequeña mejora o una nueva funcionalidad.
             </p>
 
             <p>
                 También considero esta web una especie de
-                <strong>cajón de sastre</strong>. Aquí tienen cabida muchas de
-                las cosas que me gustan o me llaman la atención: libros,
-                videojuegos, curiosidades, proyectos personales o cualquier
-                idea que me apetezca compartir.
+                <strong>cajón de sastre</strong>.
+                Aquí tienen cabida muchas de las cosas que me gustan
+                o me llaman la atención: libros, videojuegos,
+                curiosidades, proyectos personales o cualquier idea
+                que me apetezca compartir.
             </p>
 
             <p>
-                No pretende centrarse en un único tema, sino ser un espacio
-                personal que pueda crecer en cualquier dirección conforme yo
-                también vaya aprendiendo.
+                No pretende centrarse en un único tema,
+                sino ser un espacio personal que pueda crecer
+                en cualquier dirección conforme yo también
+                vaya aprendiendo.
             </p>
 
             <p>
-                La web está en constante evolución y probablemente nunca pueda
-                decir que está completamente terminada. Siempre habrá algo
-                nuevo que añadir, mejorar o aprender.
+                La web está en constante evolución y probablemente
+                nunca pueda decir que está completamente terminada.
+                Siempre habrá algo nuevo que añadir, mejorar o aprender.
             </p>
 
             <p>
-                Puedes consultar un resumen de los objetivos que he ido
-                consiguiendo durante la creación de esta web
+                Puedes consultar un resumen de los objetivos
+                que he ido consiguiendo durante la creación de esta web
                 <a href="objetivos.html">aquí</a>.
             </p>
 
             <p>
                 También puedes ver el código fuente del proyecto en mi
+
                 <a
                     href="https://github.com/JosemaRuiz-puk/aprendiendo-html-css-js"
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     repositorio de GitHub
                 </a>.
@@ -206,14 +229,23 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
 
         </section>
 
+
         <section class="cita-pratchett">
 
-            <h2>Cita aleatoria de Terry Pratchett</h2>
+            <h2>
+                Cita aleatoria de Terry Pratchett
+            </h2>
 
             <?php if ($citaPratchett): ?>
 
                 <blockquote>
-                    <?= nl2br(htmlspecialchars($citaPratchett["cita"])) ?>
+
+                    <?= nl2br(
+                        htmlspecialchars(
+                            $citaPratchett["cita"]
+                        )
+                    ) ?>
+
                 </blockquote>
 
                 <p>
@@ -224,7 +256,11 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
                     ): ?>
 
                         <strong>
-                            <?= htmlspecialchars($citaPratchett["personaje"]) ?>
+
+                            <?= htmlspecialchars(
+                                $citaPratchett["personaje"]
+                            ) ?>
+
                         </strong>
 
                         —
@@ -232,46 +268,76 @@ $citaPratchett = $sentencia->fetch(PDO::FETCH_ASSOC);
                     <?php endif; ?>
 
                     <em>
-                        <?= htmlspecialchars($citaPratchett["libro"]) ?>
+
+                        <?= htmlspecialchars(
+                            $citaPratchett["libro"]
+                        ) ?>
+
                     </em>
 
                 </p>
 
-                <p>Terry Pratchett</p>
+                <p>
+                    Terry Pratchett
+                </p>
 
             <?php else: ?>
 
-                <p>No se ha podido cargar ninguna cita.</p>
+                <p>
+                    No se ha podido cargar ninguna cita.
+                </p>
 
             <?php endif; ?>
 
         </section>
 
+
         <div class="reloj-contenedor">
-            <p>Ahora mismo son las:</p>
-            <p id="reloj">00:00:00</p>
+
+            <p>
+                Ahora mismo son las:
+            </p>
+
+            <p id="reloj">
+                00:00:00
+            </p>
+
             <p id="fecha"></p>
+
         </div>
 
     </main>
 
-    <button id="modoOscuro">🌙 Modo oscuro</button>
 
-    <button id="saludar">¡Púlsame!</button>
+    <button id="modoOscuro">
+        🌙 Modo oscuro
+    </button>
+
+    <button id="saludar">
+        ¡Púlsame!
+    </button>
 
 
     <p id="mensaje" hidden>
         Qué obediente, has pulsado el botón. Gracias, bebé 😊
     </p>
-    
+
     <p id="contadorTexto"></p>
 
+
     <footer>
-        <p>Web creada por Josutpuk.</p>
+
         <p>
-            Proyecto de aprendizaje de HTML, CSS, JavaScript, PHP y bases de datos.
+            Web creada por Josutpuk.
         </p>
+
+        <p>
+            Proyecto de aprendizaje de HTML, CSS, JavaScript,
+            PHP y bases de datos.
+        </p>
+
     </footer>
+
 
     <script src="modo-oscuro.js"></script>
     <script src="script.js"></script>
